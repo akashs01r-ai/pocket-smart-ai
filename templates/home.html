@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-head">
+
+    <span class="eyebrow">
+        Planner 01
+    </span>
+
+    <h1>
+        Home Interior Planner
+    </h1>
+
+    <p>
+        Set your total budget and
+        describe the rooms and style
+        you want.
+    </p>
+
+</section>
+
+
+<div class="planner-layout">
+
+    <form
+        class="card planner-form"
+        id="homeForm"
+    >
+
+        <label>
+
+            Total Budget (₹)
+
+            <input
+                type="number"
+                name="budget"
+                min="1"
+                required
+                placeholder="100000"
+            >
+
+        </label>
+
+
+        <label>
+
+            Style
+
+            <select name="style">
+
+                <option>
+                    Modern
+                </option>
+
+                <option>
+                    Minimal
+                </option>
+
+                <option>
+                    Traditional
+                </option>
+
+                <option>
+                    Contemporary
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <fieldset>
+
+            <legend>
+                Rooms
+            </legend>
+
+
+            <label class="check">
+
+                <input
+                    type="checkbox"
+                    name="rooms"
+                    value="Living Room"
+                    checked
+                >
+
+                Living Room
+
+            </label>
+
+
+            <label class="check">
+
+                <input
+                    type="checkbox"
+                    name="rooms"
+                    value="Bedroom"
+                >
+
+                Bedroom
+
+            </label>
+
+
+            <label class="check">
+
+                <input
+                    type="checkbox"
+                    name="rooms"
+                    value="Kitchen"
+                >
+
+                Kitchen
+
+            </label>
+
+
+            <label class="check">
+
+                <input
+                    type="checkbox"
+                    name="rooms"
+                    value="Dining Room"
+                >
+
+                Dining Room
+
+            </label>
+
+        </fieldset>
+
+
+        <button
+            class="btn primary"
+            type="submit"
+        >
+            Generate Plan
+        </button>
+
+
+        <div
+            class="form-message"
+            id="message"
+        ></div>
+
+    </form>
+
+
+    <div
+        class="card result"
+        id="result"
+    >
+
+        <div class="empty">
+            Your recommendations
+            will appear here.
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+    bindHomeForm();
+</script>
+
+{% endblock %}

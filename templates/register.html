@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="auth-card">
+
+    <h1>
+        Create Your Account
+    </h1>
+
+    <p>
+        Save your plans and
+        recommendation history.
+    </p>
+
+
+    <form id="registerForm">
+
+        <label>
+
+            Name
+
+            <input
+                type="text"
+                name="name"
+                minlength="2"
+                required
+            >
+
+        </label>
+
+
+        <label>
+
+            Email
+
+            <input
+                type="email"
+                name="email"
+                required
+            >
+
+        </label>
+
+
+        <label>
+
+            Password
+
+            <input
+                type="password"
+                name="password"
+                minlength="8"
+                required
+            >
+
+        </label>
+
+
+        <button
+            class="btn primary"
+            type="submit"
+        >
+            Register
+        </button>
+
+
+        <div
+            class="form-message"
+            id="message"
+        ></div>
+
+    </form>
+
+
+    <p>
+
+        Already registered?
+
+        <a href="/login">
+            Login
+        </a>
+
+    </p>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+    bindRegisterForm();
+</script>
+
+{% endblock %}

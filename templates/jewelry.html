@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-head">
+
+    <span class="eyebrow">
+        Planner 03
+    </span>
+
+    <h1>
+        Jewelry Budget Planner
+    </h1>
+
+    <p>
+        Describe the occasion and style.
+        Optionally upload an outfit image
+        for multimodal analysis.
+    </p>
+
+</section>
+
+
+<div class="planner-layout">
+
+    <form
+        class="card planner-form"
+        id="jewelryForm"
+        enctype="multipart/form-data"
+    >
+
+        <label>
+
+            Budget (₹)
+
+            <input
+                type="number"
+                name="budget"
+                min="1"
+                required
+                placeholder="10000"
+            >
+
+        </label>
+
+
+        <label>
+
+            Occasion
+
+            <select name="occasion">
+
+                <option>
+                    Wedding
+                </option>
+
+                <option>
+                    Party
+                </option>
+
+                <option>
+                    Festive
+                </option>
+
+                <option>
+                    Formal
+                </option>
+
+                <option>
+                    Casual
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+
+            Style
+
+            <select name="style">
+
+                <option>
+                    Elegant
+                </option>
+
+                <option>
+                    Minimal
+                </option>
+
+                <option>
+                    Traditional
+                </option>
+
+                <option>
+                    Statement
+                </option>
+
+                <option>
+                    Contemporary
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+
+            Outfit Notes
+
+            <textarea
+                name="outfit_notes"
+                rows="4"
+                placeholder="Color, neckline, fabric, pattern..."
+            ></textarea>
+
+        </label>
+
+
+        <label>
+
+            Optional Outfit Image
+
+            <input
+                type="file"
+                name="outfit_image"
+                accept="image/png,image/jpeg,image/webp"
+            >
+
+        </label>
+
+
+        <button
+            class="btn primary"
+            type="submit"
+        >
+            Generate Recommendations
+        </button>
+
+
+        <div
+            class="form-message"
+            id="message"
+        ></div>
+
+    </form>
+
+
+    <div
+        class="card result"
+        id="result"
+    >
+
+        <div class="empty">
+            Your jewelry recommendations
+            will appear here.
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+    bindJewelryForm();
+</script>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="auth-card">
+
+    <h1>
+        Welcome Back
+    </h1>
+
+    <p>
+        Sign in to save and revisit
+        your plans.
+    </p>
+
+
+    <form id="loginForm">
+
+        <label>
+
+            Email
+
+            <input
+                type="email"
+                name="email"
+                required
+            >
+
+        </label>
+
+
+        <label>
+
+            Password
+
+            <input
+                type="password"
+                name="password"
+                minlength="8"
+                required
+            >
+
+        </label>
+
+
+        <button
+            class="btn primary"
+            type="submit"
+        >
+            Login
+        </button>
+
+
+        <div
+            class="form-message"
+            id="message"
+        ></div>
+
+    </form>
+
+
+    <p>
+
+        No account?
+
+        <a href="/register">
+            Register
+        </a>
+
+    </p>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+    bindLoginForm();
+</script>
+
+{% endblock %}

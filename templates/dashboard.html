@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-head">
+
+    <span class="eyebrow">
+        Dashboard
+    </span>
+
+    <h1 id="welcome">
+        Your PocketSmart Dashboard
+    </h1>
+
+    <p>
+        Recent recommendations and
+        planner shortcuts.
+    </p>
+
+</section>
+
+
+<div class="grid three">
+
+    <a
+        class="card clickable"
+        href="/planner/home"
+    >
+
+        <h2>
+            Home
+        </h2>
+
+        <p>
+            Create a new interior plan.
+        </p>
+
+    </a>
+
+
+    <a
+        class="card clickable"
+        href="/planner/party"
+    >
+
+        <h2>
+            Party
+        </h2>
+
+        <p>
+            Build an event budget.
+        </p>
+
+    </a>
+
+
+    <a
+        class="card clickable"
+        href="/planner/jewelry"
+    >
+
+        <h2>
+            Jewelry
+        </h2>
+
+        <p>
+            Get occasion-based suggestions.
+        </p>
+
+    </a>
+
+</div>
+
+
+<section class="card">
+
+    <h2>
+        Recent Plans
+    </h2>
+
+    <div id="recentHistory">
+        Loading...
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+    loadDashboard();
+</script>
+
+{% endblock %}
